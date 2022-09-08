@@ -1,9 +1,8 @@
 import React from 'react'
 import { useGlobalContext } from '../Context'
-import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
+import { FaCaretLeft, FaCaretRight } from 'react-icons/fa'
 
-const CartItem = ( {product:{product_id, name, price}, amount, totalPrice}) => {
-
+const CartItem = ( {product:{product_id, name, price}, amount, totalPrice} ) => {
     const { deleteCartItem, changeAmountCartItem } = useGlobalContext();
 
     return (

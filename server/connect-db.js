@@ -6,7 +6,7 @@ const pool = new Pool({
     password: process.env.PASSWORD,
     host: 'localhost',
     port: 5432,
-    database: 'sampleshop',
+    database: 'e_commerce_project',
 })
 
 module.exports = pool;

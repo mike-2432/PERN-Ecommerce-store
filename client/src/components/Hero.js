@@ -1,33 +1,18 @@
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom'
-import { useGlobalContext } from '../Context';
+import React from 'react'
+import { useGlobalContext } from '../Context'
 
 const Hero = () => {
-
-    const { setSearchProduct} = useGlobalContext();
-    const location = useLocation();
-    
-    const isHomePage = () => {
-        if(location.pathname === '/') {
-            return true;
-        }
-        return false;
-    }
-
-    useEffect(()=> {
-        isHomePage();           
-        setSearchProduct('');   // Reset products after page change
-    }, [location])
-    
+    const { currentLocation } = useGlobalContext();
+   
     return (
         <>
-            <div className={`${isHomePage() ? 'hero' : 'hero hide-hero'}`}>                     
+            <div className={`${currentLocation === '/' ? 'hero' : 'hero hide-hero'}`}>                     
             </div>
 
-            <div className={`${isHomePage() ? 'hero-container' : 'hide-hero-container'}`}>                
+            <div className={`${currentLocation === '/' ? 'hero-container' : 'hide-hero-container'}`}>                
                 <h1 className='hero-title'>An E-commerce</h1>
                 <h1 className='hero-title'>Project</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptate ab illo, explicabo harum eum consequatur atque corrupti vel? Dolorum dicta consequatur ea tenetur doloribus rerum, sed optio asperiores rem?</p>
+                <p>This Web Application is solely made to test my full stack development skills. The goal was the create a fully functional E-commerce application without relying too heavily on third party code / dependencies.</p>
             </div>  
         </> 
     )

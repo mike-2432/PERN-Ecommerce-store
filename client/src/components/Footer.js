@@ -1,12 +1,10 @@
-import React from 'react';
+import React from 'react'
 
 const Footer = () => {
     return (
-        <div className="footer">
-            <div className="footer-underline"></div>
-            <div className="footer-container">
-                <h4>Some footer</h4>
-            </div>
+        <div className='footer'>
+            <div className='footer-underline'></div>
+            <div className='footer-container'></div>
         </div>
     )
 }
