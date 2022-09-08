@@ -1,24 +1,26 @@
-import React from 'react';
+import React from 'react'
 
-export default function Product({ product_id, name, category, price, description }) {
+export default function Product({ name, price, description, category }) {
 
-    // Shorten description after a certain amount of characters
     const checkDescriptionLenght = () => {
-        if(description.length > 100) {
-            return true
-        }
+        if(description.length > 80) return true
         return false
     }
 
     return (
-        <div className="product-card">
-            <div className="product-card-info">
-                <h2>{name}</h2>
-                <p>{checkDescriptionLenght() ? description.substring(0, 100)+`...` : description}</p>
-                <p>Price: {price}</p>
-            </div>
-            
-            <div className="img-container"></div>
+        <div className='product-card'>
+            <div className='product-card-info'>
+
+                <div className="product-card-title">
+                    <h2>{name}</h2>
+                    <p className='product-card-category'>{category}</p>
+                </div>   
+                             
+                <p className='product-card-desc'>{checkDescriptionLenght() ? description.substring(0, 80)+`...` : description}</p>
+                <p className='product-card-desc'>Price: ${price}</p>
+
+            </div>            
+            <div className='img-container'></div>
         </div>        
     )
 }
