@@ -155,9 +155,9 @@ export function AppProvider({children}) {
             try {      
                 let response = '';   
                 if(sortMethod) {
-                    response = await fetch(`http://localhost:3001/api/v1/products/${sortMethod}/${sortParam}`)
+                    response = await fetch(`/api/v1/products/${sortMethod}/${sortParam}`)
                 } else {
-                    response = await fetch(`http://localhost:3001/api/v1/products/${searchProduct}`)
+                    response = await fetch(`/api/v1/products/${searchProduct}`)
                 }            
                 const data = await response.json()
                 if(data) {
@@ -178,7 +178,7 @@ export function AppProvider({children}) {
     useEffect(() => {
         const fetchInventory = async() => {
             try {
-                const response = await fetch(`http://localhost:3001/api/v1/inventory`)
+                const response = await fetch(`/api/v1/inventory`)
                 const data = await response.json()
                 setInventory(data);
             } catch(err) {

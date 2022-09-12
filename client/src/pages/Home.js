@@ -10,7 +10,9 @@ const Home = () => {
         <div className='homepage-container'>        
           <h1>About the Project</h1>
           <div className='homepage-text-area'>
-            {info.map(paragraph => paragraph)}                  
+            {info.map((paragraph, index) => {
+              return <p key={index}>{paragraph}</p>
+              })}                  
           </div>      
         </div>        
       </div>

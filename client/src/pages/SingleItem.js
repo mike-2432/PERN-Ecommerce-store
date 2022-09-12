@@ -17,9 +17,9 @@ const SingleItem = () => {
     setLoading(true)
     async function getProduct() {
       try {
-        const product_response = await fetch(`http://localhost:3001/api/v1/product/${id}`);
+        const product_response = await fetch(`/api/v1/product/${id}`);
         const product_data = await product_response.json();
-        const inventory_response = await fetch(`http://localhost:3001/api/v1/inventory/${id}`);
+        const inventory_response = await fetch(`/api/v1/inventory/${id}`);
         const inventory_data = await inventory_response.json();
         if(product_data && inventory_data) {
             setSingleProduct(...product_data)
@@ -49,7 +49,7 @@ const SingleItem = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setSuccesColor(false);
-    }, 500);
+    }, 400);
     return () => clearTimeout(timeout);
   }, [succesColor])
   
