@@ -1,8 +1,8 @@
 // IMPORT MODULES //
-const pool = require('../connect-db');
+const pool = require('../db');
 
 
-// CONTROLLER //
+// CONTROLLERS //
 
 // get all products
 const getAllProducts = async(req, res) => {

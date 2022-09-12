@@ -9,14 +9,14 @@ const Checkout = () => {
     const [ formValues, setFormValues ] = useState({
         products: cartItems.map((cartItem) => cartItem.product.name + '(' + cartItem.amount + ')').join(),
         total_price: totalCartValue,
-        first_name:'test',
-        last_name:'test',
+        first_name:'',
+        last_name:'',
         dob:'',
-        phone_number:'1234567',
-        address:'test',
-        city:'test',
-        email:'e@e.nl',
-        confirmemail:'e@e.nl',
+        phone_number:'',
+        address:'',
+        city:'',
+        email:'',
+        confirmemail:'',
     });
 
     const formInputs = [
@@ -110,7 +110,7 @@ const Checkout = () => {
        
         try {
             // Substract the items from the inventory
-            const response = await fetch(`http://localhost:3001/api/v1/inventory`, {
+            const response = await fetch(`/api/v1/inventory`, {
                 method: 'PUT',
                 headers: {
                     'Accept': 'application/json',
@@ -132,7 +132,7 @@ const Checkout = () => {
             }
             
             // Send the data to the database
-            await fetch(`http://localhost:3001/api/v1/submit`, {
+            await fetch(`/api/v1/submit`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

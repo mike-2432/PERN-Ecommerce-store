@@ -11,13 +11,13 @@ export default function Product({ name, price, description, category }) {
         <div className='product-card'>
             <div className='product-card-info'>
 
-                <div className="product-card-title">
-                    <h2>{name}</h2>
+                <div>
+                    <h2 className='product-card-title'>{name}</h2>
                     <p className='product-card-category'>{category}</p>
                 </div>   
                              
                 <p className='product-card-desc'>{checkDescriptionLenght() ? description.substring(0, 80)+`...` : description}</p>
-                <p className='product-card-desc'>Price: ${price}</p>
+                <p className='product-card-price'>Price: $ {price}</p>
 
             </div>            
             <div className='img-container'></div>
